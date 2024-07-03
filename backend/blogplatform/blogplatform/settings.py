@@ -19,6 +19,7 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", default="*").split(",")
 
 INSTALLED_APPS = [
     "api.apps.ApiConfig",
+    "homepage.apps.HomepageConfig",
     "user.apps.UserConfig",
     "django.contrib.admin",
     "django.contrib.auth",

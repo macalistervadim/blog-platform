@@ -21,7 +21,8 @@ import django.urls
 
 urlpatterns = [
     django.urls.path("admin/", django.contrib.admin.site.urls),
-    django.urls.path("api/v1/", django.urls.include("api.urls"))
+    django.urls.path("api/v1/", django.urls.include("api.urls")),
+    django.urls.path("", django.urls.include("homepage.urls")),
 ]
 
 
