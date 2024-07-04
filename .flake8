@@ -1,5 +1,5 @@
 [flake8]
-application_import_names = user
+application_import_names = user, posts
 inline-quotes = double
 exclude = .git, __pycache__, migrations, venv, frontend
 import-order-style = google

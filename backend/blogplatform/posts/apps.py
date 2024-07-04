@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class HomepageConfig(AppConfig):
+class PostsConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "homepage"
-    verbose_name = "Главная"
+    name = "posts"
+    verbose_name = "Записи"
