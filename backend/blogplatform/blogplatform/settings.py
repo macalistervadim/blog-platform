@@ -4,6 +4,7 @@ import pathlib
 
 import dotenv
 
+
 dotenv.load_dotenv()
 
 
@@ -133,6 +134,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.DjangoModelPermissions",
     ),
+    "SEARCH_PARAM": "q",
 }
 
 STATIC_URL = "static/"
@@ -285,3 +287,64 @@ CKEDITOR_CONFIGS = {
         ),
     },
 }
+
+EMAIL_BACKEND = os.getenv("DJANGO_EMAIL_BACKEND")
+
+EMAIL_HOST = os.getenv("DJANGO_EMAIL_HOST")
+
+EMAIL_PORT = int(os.getenv("DJANGO_EMAIL_PORT"))
+
+EMAIL_USE_SSL = os.getenv("DJANGO_EMAIL_USE_SSL") == "True"
+
+EMAIL_HOST_USER = os.getenv("DJANGO_EMAIL_HOST_USER")
+
+EMAIL_HOST_PASSWORD = os.getenv("DJANGO_EMAIL_HOST_PASSWORD")
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+SERVER_EMAIL = EMAIL_HOST_USER
+
+EMAIL_ADMIN = EMAIL_HOST_USER
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'console': {
+#             'format': '%(name)-12s %(levelname)-8s %(message)s'
+#         },
+#         'file': {
+#             'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'console',
+#         },
+#         'file': {
+#             'level': 'DEBUG',
+#             'class': 'logging.FileHandler',
+#             'formatter': 'file',
+#             'filename': os.path.join(BASE_DIR, 'debug.log'),
+#         },
+#     },
+#     'loggers': {
+#         '': {
+#             'level': 'DEBUG',
+#             'handlers': ['console', 'file'],
+#         },
+#         'django': {
+#             'handlers': ['console', 'file'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#         'django.request': {
+#             'handlers': ['file'],
+#             'level': 'ERROR',
+#             'propagate': True,
+#         },
+#     },
+# }
+
+# logging.config.dictConfig(LOGGING)

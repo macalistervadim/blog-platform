@@ -1,10 +1,21 @@
 import django.conf
 import django.contrib
 import django.urls
+import rest_framework_simplejwt.views
 
 urlpatterns = [
     django.urls.path("admin/", django.contrib.admin.site.urls),
     django.urls.path("api/v1/", django.urls.include("api.urls")),
+    django.urls.path(
+        "api/v1/token/",
+        rest_framework_simplejwt.views.TokenObtainPairView.as_view(),
+        name="token",
+    ),
+    django.urls.path(
+        "api/v1/refresh_token/",
+        rest_framework_simplejwt.views.TokenRefreshView.as_view(),
+        name="refresh_token",
+    ),
     django.urls.path(
         "ckeditor/",
         django.urls.include("ckeditor_uploader.urls"),

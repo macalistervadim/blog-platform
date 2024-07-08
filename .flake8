@@ -4,3 +4,4 @@ inline-quotes = double
 exclude = .git, __pycache__, migrations, venv, frontend
 import-order-style = google
 max-line-length = 100
+max-complexity = 12
